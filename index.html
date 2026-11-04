@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sanjaay Naren – AI/ML × Full-Stack Developer</title>
+<meta name="description" content="Portfolio of Sanjaay Naren, B.Tech IT student building intelligent solutions with AI/ML and full-stack development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050a18;--bg2:#0a1330;--cy:#22d3ee;--bl:#3b82f6;--pu:#8b5cf6;--tx:#e6ecff;--mu:#93a1c7;--gl:rgba(255,255,255,.05);--ln:rgba(120,170,255,.18);--d:'Syne','Trebuchet MS',sans-serif;--b:'Outfit','Segoe UI',sans-serif;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 1.05rem/1.65 var(--b);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(60vw 50vw at 85% 10%,rgba(139,92,246,.16),transparent 60%),radial-gradient(60vw 50vw at 10% 90%,rgba(34,211,238,.10),transparent 60%);pointer-events:none;z-index:-1}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+h1,h2,h3{font-family:var(--d);margin:0;line-height:1.05}
+h2{font-size:clamp(2rem,5vw,3.4rem);margin-bottom:2rem;letter-spacing:-.02em}
+section{padding:6rem 1.25rem;max-width:1100px;margin:0 auto}
+p{margin:0 0 1rem;max-width:62ch}
+.mu{color:var(--mu)}
+.glass{background:var(--gl);border:1px solid var(--ln);border-radius:18px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+#load{position:fixed;inset:0;background:var(--bg);display:grid;place-items:center;z-index:100;transition:opacity .6s,visibility .6s}
+#load i{width:14px;height:14px;border-radius:50%;background:var(--cy);box-shadow:0 0 30px 8px var(--cy);animation:p 1s infinite alternate}
+#load.off{opacity:0;visibility:hidden}
+@keyframes p{to{transform:scale(2.4);opacity:.4}}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:calc(12px + env(safe-area-inset-top,0px)) 1.25rem 12px;display:flex;justify-content:space-between;align-items:center;background:rgba(5,10,24,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--ln)}
+nav b{font-family:var(--d);font-size:1.1rem}
+nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;font-size:.95rem}
+nav ul a{text-decoration:none;color:var(--mu);transition:color .2s}
+nav ul a:hover,nav ul a.on{color:var(--cy)}
+#mb{display:none;background:none;border:1px solid var(--ln);color:var(--tx);border-radius:10px;padding:.4rem .8rem;font:inherit}
+#hero{position:relative;min-height:100svh;max-width:none;padding:7rem 1.25rem 3rem;display:grid;place-items:center;text-align:center;overflow:hidden}
+#core{position:absolute;inset:0;width:100%;height:100%;cursor:pointer}
+.hc{position:relative;pointer-events:none}
+.hc h1{font-size:clamp(2.6rem,10vw,7rem);font-weight:800;letter-spacing:-.03em;background:linear-gradient(100deg,#fff 30%,var(--cy) 70%,var(--pu));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hc .r{font-family:var(--d);font-size:clamp(1rem,2.6vw,1.5rem);margin:1rem 0 .6rem;color:var(--cy)}
+.hc p{margin:0 auto 2rem;color:var(--mu)}
+.btn{pointer-events:auto;display:inline-block;padding:.9rem 2rem;border-radius:99px;background:linear-gradient(90deg,var(--cy),var(--bl));color:#031024;font-weight:500;text-decoration:none;border:0;font:500 1rem var(--b);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(34,211,238,.4)}
+.hint{position:absolute;bottom:1.2rem;left:0;right:0;font-size:.85rem;color:var(--mu);pointer-events:none}
+.grid{display:grid;gap:1.2rem}
+.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{padding:1.5rem}
+.card h3{font-size:1.2rem;margin-bottom:.8rem;color:var(--cy)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none}
+.chips li{padding:.35rem .85rem;border:1px solid var(--ln);border-radius:99px;font-size:.92rem;background:rgba(59,130,246,.08);transition:border-color .2s,transform .2s}
+.chips li:hover{border-color:var(--cy);transform:translateY(-2px)}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:2rem}
+.stat{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--ln)}
+.stat:last-child{border:0}
+.proj{overflow:hidden;transition:border-color .3s,transform .3s}
+.proj:hover{border-color:var(--cy);transform:translateY(-4px)}
+.ph{height:120px;display:grid;place-items:center;font-family:var(--d);font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,rgba(34,211,238,.25),rgba(139,92,246,.3));color:rgba(255,255,255,.85)}
+.pb{padding:1.3rem}
+.tag{font-size:.82rem;color:var(--pu);margin-bottom:.3rem}
+.pb h3{font-size:1.25rem;margin-bottom:.6rem}
+.pb button{margin-top:.6rem;background:none;border:1px solid var(--ln);color:var(--cy);border-radius:99px;padding:.4rem 1rem;font:inherit;font-size:.9rem;cursor:pointer}
+.more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s}
+.more>div{overflow:hidden}
+.proj.open .more{grid-template-rows:1fr}
+.more ul{margin:.8rem 0;padding-left:1.1rem}
+.note{font-size:.85rem;color:var(--mu);font-style:italic}
+.tl{border-left:2px solid var(--cy);padding-left:1.5rem}
+.tl+.tl{margin-top:1.5rem;border-color:var(--ln)}
+.ach{padding:1.5rem;position:relative}
+.ach .y{font-family:var(--d);font-size:2rem;color:var(--pu)}
+form{display:grid;gap:.9rem}
+input,textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--ln);border-radius:12px;padding:.8rem 1rem;color:var(--tx);font:inherit}
+.links a{display:block;padding:.6rem 0;text-decoration:none;border-bottom:1px solid var(--ln)}
+.links a:hover{color:var(--cy)}
+footer{text-align:center;padding:2rem 1rem 3rem;color:var(--mu);font-size:.9rem}
+#up{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:1px solid var(--ln);background:rgba(10,19,48,.8);color:var(--cy);font-size:1.2rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;z-index:40}
+#up.s{opacity:1;pointer-events:auto}
+#cur{position:fixed;width:28px;height:28px;border:1px solid var(--cy);border-radius:50%;pointer-events:none;z-index:90;transform:translate(-50%,-50%);transition:width .2s,height .2s;display:none;mix-blend-mode:screen}
+@media(pointer:fine){#cur{display:block}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:760px){
+ nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(5,10,24,.96);padding:1rem 1.25rem;gap:1rem}
+ nav ul.open{display:flex}#mb{display:block}
+ .about{grid-template-columns:1fr}section{padding:4.5rem 1.1rem}
+}
+@property --ang{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes spin{to{--ang:360deg}}
+@keyframes gm{to{background-position:0 60px}}
+@keyframes mq{to{transform:translateX(-50%)}}
+.glass{position:relative}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:conic-gradient(from var(--ang),transparent 0 65%,var(--cy),var(--pu),transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s;animation:spin 4s linear infinite;pointer-events:none}
+.glass::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),rgba(34,211,238,.13),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.glass:hover::before,.glass:hover::after{opacity:1}
+nav.glass::before,nav.glass::after{display:none}
+h2::after{content:"";display:block;height:3px;width:72px;margin-top:.8rem;background:linear-gradient(90deg,var(--cy),var(--pu));border-radius:3px;box-shadow:0 0 18px var(--cy)}
+#hero::after{content:"";position:absolute;left:-10%;right:-10%;bottom:0;height:42%;background-image:linear-gradient(rgba(34,211,238,.28) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.28) 1px,transparent 1px);background-size:60px 60px;transform:perspective(420px) rotateX(62deg);transform-origin:bottom;-webkit-mask-image:linear-gradient(to top,#000,transparent);mask-image:linear-gradient(to top,#000,transparent);opacity:.55;animation:gm 3s linear infinite;pointer-events:none}
+.mq{overflow:hidden;border-block:1px solid var(--ln);padding:.9rem 0;white-space:nowrap;font-family:var(--d);font-size:1.1rem;color:var(--mu);background:rgba(34,211,238,.03)}
+.mq div{display:inline-block;animation:mq 35s linear infinite}
+.mq span{display:inline-block;padding:0 1.6rem}
+.mq span::after{content:"";display:inline-block;width:7px;height:7px;margin-left:3.2rem;border-radius:50%;background:var(--cy);box-shadow:0 0 12px var(--cy)}
+.hc .r{text-shadow:0 0 24px rgba(34,211,238,.6)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="load" aria-hidden="true"><i></i></div>
+<div id="cur"></div>
+<nav aria-label="Main">
+ <b>SN</b><button id="mb" aria-expanded="false" aria-controls="menu">Menu</button>
+ <ul id="menu"><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Internship</a></li><li><a href="#certs">Certifications</a></li><li><a href="#achievements">Achievements</a></li><li><a href="#contact">Contact</a></li></ul>
+</nav>
+
+<header id="hero">
+ <canvas id="core" aria-label="Interactive neural core. Click or tap to ignite it." role="img"></canvas>
+ <div class="hc">
+  <h1>SANJAAY NAREN</h1>
+  <div class="r">AI/ML × FULL-STACK DEVELOPER</div>
+  <p>Building intelligent solutions for real-world problems.</p>
+  <a class="btn" href="#about">Explore Portfolio</a>
+ </div>
+ <div class="hint">Tap the core to light it up</div>
+</header>
+<div class="mq" aria-hidden="true"><div><span>Machine Learning</span><span>Full-Stack</span><span>NLP</span><span>Computer Vision</span><span>Satellite Imagery</span><span>Generative AI</span><span>Data Structures</span><span>Embedded C</span><span>Machine Learning</span><span>Full-Stack</span><span>NLP</span><span>Computer Vision</span><span>Satellite Imagery</span><span>Generative AI</span><span>Data Structures</span><span>Embedded C</span></div></div>
+
+<main>
+<section id="about"><h2 class="rv">About me</h2>
+ <div class="about rv">
+  <div>
+   <p>I'm an Information Technology undergraduate who likes turning ideas into working software. My interests sit across AI and machine learning, full-stack development, natural language processing, computer vision and satellite image processing.</p>
+   <p>I enjoy data structures, algorithms and problem solving, and I learn best by building practical projects, from a thermal prediction system for data centers to a platform that helps reduce food waste.</p>
+   <p>My goal is to build a career in Artificial Intelligence, creating intelligent software that solves real problems.</p>
+  </div>
+  <div class="glass card">
+   <h3>Education</h3>
+   <div class="stat"><span>B.Tech Information Technology<br><span class="mu">Dr. N.G.P. Institute of Technology</span></span><span>2024–2028</span></div>
+   <div class="stat"><span>CGPA</span><b id="cgpa" contenteditable="true" spellcheck="false">8.55</b></div>
+   <div class="stat"><span>HSC</span><span>89% · 2023–2024</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="skills"><h2 class="rv">Technical skills</h2>
+ <div class="grid g3 rv" id="skillGrid"></div>
+</section>
+
+<section id="projects"><h2 class="rv">Featured projects</h2>
+ <div class="grid g2" id="projGrid"></div>
+</section>
+
+<section id="experience"><h2 class="rv">Internship</h2>
+ <div class="tl rv"><h3>Full Stack Development with AI</h3><p class="mu">MIST Software Solutions Pvt. Ltd. · 15 days</p><p>Internship project: Food Rescue Network (2026), a web platform that connects food donors, NGOs and volunteers to reduce food waste.</p></div>
+</section>
+
+<section id="certs"><h2 class="rv">Certifications and activities</h2>
+ <div class="grid g2 rv">
+  <div class="glass card"><h3>Certifications</h3><ul class="chips" style="flex-direction:column;align-items:flex-start" id="certList"></ul></div>
+  <div class="glass card"><h3>Hackathons and technical events</h3><ul class="chips" style="flex-direction:column;align-items:flex-start" id="actList"></ul></div>
+ </div>
+</section>
+
+<section id="achievements"><h2 class="rv">Achievements</h2>
+ <div class="grid g3 rv" id="achGrid"></div>
+</section>
+
+<section id="contact"><h2 class="rv">Let's talk</h2>
+ <div class="grid g2 rv">
+  <div>
+   <p>Have a project, an internship opportunity or just want to say hello? Send me a message.</p>
+   <div class="links">
+    <a href="mailto:sanjaaaynaren@gmail.com">Email: sanjaaaynaren@gmail.com</a>
+    <a href="tel:+916369719924">Phone: +91 63697 19924</a>
+    <a href="https://github.com/sanjaaaynaren" target="_blank" rel="noopener">GitHub: sanjaaaynaren</a>
+    <a href="https://www.linkedin.com/in/sanjaaynaren-b-373366324" target="_blank" rel="noopener">LinkedIn: Sanjaay Naren</a>
+   </div>
+  </div>
+  <form id="cf" class="glass card">
+   <input name="n" placeholder="Your name" aria-label="Your name" required>
+   <input name="e" type="email" placeholder="Your email" aria-label="Your email" required>
+   <textarea name="m" rows="5" placeholder="Your message" aria-label="Your message" required></textarea>
+   <button class="btn" type="submit">Send message</button>
+   <span class="note">Opens your email app with the message ready to send.</span>
+  </form>
+ </div>
+</section>
+</main>
+<footer>© 2026 Sanjaay Naren</footer>
+<button id="up" aria-label="Back to top">↑</button>
+
+<script>
+/* ---- Editable content ---- */
+const SKILLS={"Programming":["Python","Java","C"],"Web development":["HTML","CSS","JavaScript"],"Computer science":["Data Structures","Object-Oriented Programming","DBMS","Problem Solving"],"AI / ML":["Machine Learning","Natural Language Processing","Generative AI"],"Tools":["Git","GitHub","VS Code"]};
+const PROJECTS=[
+{t:"ThermoGuard AI",c:"Artificial Intelligence / Machine Learning",y:"2026",g:"TG",d:"An AI-based data center monitoring and cooling optimization system.",f:["30-second server temperature prediction","Thermal risk detection","Intelligent cooling recommendations","Interactive data center monitoring","Digital Twin and cooling comparison"]},
+{t:"Food Rescue Network",c:"Full-Stack Development with AI",y:"2026",g:"FR",d:"A web platform connecting food donors, NGOs and volunteers to reduce food wastage.",f:["Food donation management","AI-based food freshness prediction","Role-based dashboards","Volunteer delivery tracking"]},
+{t:"AI-Based Satellite Video Enhancement",c:"AI / Machine Learning",y:"2026",g:"SV",d:"An automated pipeline to fetch satellite imagery data and enhance video quality using AI models.",f:[]},
+{t:"Resume IQ",c:"NLP / Artificial Intelligence",y:"2025",g:"IQ",d:"An NLP-based resume screening system that analyzes resumes and ranks candidates using automated text analysis.",f:["Built with Python and NLP techniques"]},
+{t:"Smart Water Dispenser",c:"Embedded Systems",y:"2024",g:"SW",d:"An automated water dispenser developed using Embedded C and sensors to control water flow.",f:["Conditional programming and debugging to control water flow"]}];
+const CERTS=["Basics of Python · Infosys Springboard","C Programming Basics · Simplilearn","Problem Solving Through Programming in C · NPTEL","MongoDB Aggregation in Python · MongoDB","Python and Generative AI Hands-on Training · Navigate Labs","Introduction to Database Systems · NPTEL"];
+const ACTS=["MobilityX2.0 · KPR","DoomsDay Protocol · PSG iTech","Dev Battle · SIET","MegathonX · IIIT Hyderabad"];
+const ACH=[["2025","Programming in Java Elite – Silver","NPTEL"],["2026","Best Project Presentation Award","NGP Project Expo"],["2024","National-Level Participant","Srinivasa Ramanujan Mathematical Competition, ISTE"]];
+
+const $=s=>document.querySelector(s);
+$('#skillGrid').innerHTML=Object.entries(SKILLS).map(([k,v])=>`<div class="glass card"><h3>${k}</h3><ul class="chips">${v.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+$('#projGrid').innerHTML=PROJECTS.map((p,i)=>`<article class="glass proj"><div class="ph" aria-hidden="true">${p.g}</div><div class="pb"><div class="tag">${p.c} · ${p.y}</div><h3>${p.t}</h3><p class="mu">${p.d}</p><div class="more" id="m${i}"><div>${p.f.length?`<ul>${p.f.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}<p class="note">Screenshots and more details will be added here.</p></div></div><button aria-expanded="false" aria-controls="m${i}">View details</button></div></article>`).join('');
+$('#certList').innerHTML=CERTS.map(x=>`<li>${x}</li>`).join('');
+$('#actList').innerHTML=ACTS.map(x=>`<li>${x}</li>`).join('');
+$('#achGrid').innerHTML=ACH.map(a=>`<div class="glass ach"><div class="y">${a[0]}</div><h3 style="font-size:1.15rem;margin:.4rem 0">${a[1]}</h3><p class="mu" style="margin:0">${a[2]}</p></div>`).join('');
+
+document.addEventListener('click',e=>{const b=e.target.closest('.pb button');if(!b)return;const p=b.closest('.proj'),o=p.classList.toggle('open');b.setAttribute('aria-expanded',o);b.textContent=o?'Hide details':'View details'});
+const mb=$('#mb'),mn=$('#menu');mb.onclick=()=>{const o=mn.classList.toggle('open');mb.setAttribute('aria-expanded',o)};mn.onclick=e=>{if(e.target.tagName==='A'){mn.classList.remove('open');mb.setAttribute('aria-expanded',false)}};
+document.addEventListener('pointermove',e=>{const g=e.target.closest('.glass');if(!g)return;const r=g.getBoundingClientRect();g.style.setProperty('--mx',(e.clientX-r.left)+'px');g.style.setProperty('--my',(e.clientY-r.top)+'px')});
+$('#cf').onsubmit=e=>{e.preventDefault();const f=e.target;location.href=`mailto:sanjaaaynaren@gmail.com?subject=${encodeURIComponent('Portfolio message from '+f.n.value)}&body=${encodeURIComponent(f.m.value+'\n\n'+f.n.value+' ('+f.e.value+')')}`};
+const up=$('#up');up.onclick=()=>scrollTo({top:0});addEventListener('scroll',()=>up.classList.toggle('s',scrollY>600),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv').forEach(x=>io.observe(x));
+const links=[...document.querySelectorAll('nav ul a')],secs=links.map(a=>$(a.getAttribute('href')));
+new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id))}),{rootMargin:'-45% 0px -50% 0px'}).observe&&secs.forEach(s=>new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id))}),{rootMargin:'-45% 0px -50% 0px'}).observe(s));
+const cur=$('#cur');addEventListener('pointermove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+document.addEventListener('pointerover',e=>{const h=e.target.closest('a,button,canvas');cur.style.width=cur.style.height=h?'48px':'28px'});
+addEventListener('load',()=>setTimeout(()=>$('#load').classList.add('off'),500));
+
+/* ---- Neural core (canvas, no libraries) ---- */
+(()=>{const c=$('#core'),x=c.getContext('2d'),N=70,P=[];let W,H,a=0,glow=0,target=0,mx=0,my=0;
+for(let i=0;i<N;i++){const t=Math.acos(1-2*(i+.5)/N),f=Math.PI*(1+Math.sqrt(5))*i;P.push([Math.sin(t)*Math.cos(f),Math.cos(t),Math.sin(t)*Math.sin(f)])}
+const rs=()=>{const d=Math.min(devicePixelRatio||1,2);W=c.clientWidth;H=c.clientHeight;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0)};rs();addEventListener('resize',rs);
+c.addEventListener('pointermove',e=>{mx=(e.offsetX/W-.5);my=(e.offsetY/H-.5)});
+c.addEventListener('click',()=>{target=target?0:1;$('.hint').textContent=target?'Core online':'Tap the core to light it up'});
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function fr(){x.clearRect(0,0,W,H);glow+=(target-glow)*.05;if(!rm)a+=.004+glow*.004;
+const R=Math.min(W,H)*(W<700?.34:.3),cx=W/2,cy=H/2,ay=a+mx*1.2,ax=my*.8,pts=P.map(p=>{let X=p[0]*Math.cos(ay)-p[2]*Math.sin(ay),Z=p[0]*Math.sin(ay)+p[2]*Math.cos(ay),Y=p[1]*Math.cos(ax)-Z*Math.sin(ax);Z=p[1]*Math.sin(ax)+Z*Math.cos(ax);const s=1/(1.8-Z*.5);return[cx+X*R*s*1.5,cy+Y*R*s*1.5,Z,s]});
+const g=x.createRadialGradient(cx,cy,0,cx,cy,R*1.6);g.addColorStop(0,`rgba(34,211,238,${.12+glow*.35})`);g.addColorStop(.5,`rgba(139,92,246,${.05+glow*.15})`);g.addColorStop(1,'transparent');x.fillStyle=g;x.fillRect(0,0,W,H);
+x.lineWidth=1;const L=R*.62;for(let i=0;i<N;i++)for(let j=i+1;j<N;j++){const dx=pts[i][0]-pts[j][0],dy=pts[i][1]-pts[j][1],d=Math.hypot(dx,dy);if(d<L){x.strokeStyle=`rgba(${80+glow*0},${180+glow*50},255,${(1-d/L)*(.25+glow*.45)})`;x.beginPath();x.moveTo(pts[i][0],pts[i][1]);x.lineTo(pts[j][0],pts[j][1]);x.stroke()}}
+pts.forEach(p=>{x.fillStyle=`rgba(${150-glow*110},${220},255,${.45+p[2]*.3+glow*.25})`;x.beginPath();x.arc(p[0],p[1],(1.4+glow*1.6)*p[3]*1.6,0,7);x.fill()});
+requestAnimationFrame(fr)}fr()})();
+</script>
+</body>
+</html>
